@@ -86,7 +86,15 @@ public class MyArrayList<E> {
 	 * @param elem
 	 */
 	public void add(int index, E elem) {
+        if (elements[index] == null) {
+            elements[index] = elem;
+            currentSize++;
+        } else {
+            int newIndex = elements.length + 1;
+            expandSize();
+            elements[newIndex] = elem;
 
+        }
 	}
 	
 	/**

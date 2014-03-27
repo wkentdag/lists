@@ -2,13 +2,9 @@ package org.macalester.edu.comp124.lists;
 
 
 /**
- * An unfinished implementation of a List.
- * 
- * TODO:
- * 1. Complete add(o) (unit test 1 and 2 should pass)
- * 2. Complete expand() (unit tests 1, 2, and 3 should pass)
- * 3. Complete add(i, o) (all 4 unit tests should pass)
- * 
+ * An unfinished implementation of an array-based List.
+ *
+ * @author shilad
  * @param <E>
  */
 public class MyArrayList<E> {
@@ -38,7 +34,7 @@ public class MyArrayList<E> {
 	}
 	
 	/**
-	 * Returns the current size of the array.
+	 * Returns the current size of the list.
 	 * @return
 	 */
 	public int size() {
@@ -51,11 +47,11 @@ public class MyArrayList<E> {
 	 * @return
 	 */
 	public E get(int index) {
-		return elements[index];
+        return null;    // replace this line with the correct code.
 	}
 	
 	/**
-	 * Adds a new element to the end of the array:
+	 * Adds a new element to the end of the list:
 	 * 
 	 * If the array is full, expand the array.
 	 * Add the element to the first unused position in the array.
@@ -64,14 +60,10 @@ public class MyArrayList<E> {
 	 * @param elem
 	 */
 	public void add(E elem) {
-        if (currentSize == elements.length) {
-            expandSize();
-        }
-        elements[currentSize++] = elem;
 	}
 
 	/**
-	 * Adds a new element to the end of the array:
+	 * Inserts a new element at the specified index.
 	 * 
 	 * If the array is full, expand the array.
 	 * Slide the elements of the array starting with index over.
@@ -89,14 +81,10 @@ public class MyArrayList<E> {
 	 * into the new array, and updates elements to point to the
 	 * new array.
 	 * 
-	 * This will be useful for both versions of add.
+	 * This will be useful for both versions of add().
+     * Hint: use newArrayOfE!
 	 */
 	private void expandSize() {
-        E [] newElements = newArrayOfE(2 * elements.length);
-        for (int i = 0; i < elements.length; i++) {
-            newElements[i] = elements[i];
-        }
-        elements = newElements;
 	}
 	
 	/**

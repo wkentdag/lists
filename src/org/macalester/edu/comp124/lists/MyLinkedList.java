@@ -1,46 +1,64 @@
 package org.macalester.edu.comp124.lists;
 
 /**
- * TODO:
- * 1) Complete the get() method (unit test 1 and 2 should pass).
- * 2) Complete the add(i, E) method (unit tests 1 - 3 should pass).
- * @author Shilad
+ * An unfinished implementation of a basic doubly-linked list.
  *
+ * Note that the head and the tail contain "sentinel" nodes without values.
+ * This makes the edge cases of the algorithm easier because the list always has a discrete head and tail.
+ *
+ * @author shilad
  * @param <E>
  */
 public class MyLinkedList<E> {
 	private MyLinkedNode<E> head;
 	private MyLinkedNode<E> tail;
 	private int numElements = 0;
-	
+
+    /**
+     * Creates a new empty linked list.
+     */
 	public MyLinkedList() {
 		head = new MyLinkedNode<E>(null);
 		tail = new MyLinkedNode<E>(null);
 		clear();
 	}
-	
-	public E get(int i) {
+
+    /**
+     * Returns the element at position index.
+     * @param index
+     * @return
+     */
+	public E get(int index) {
 		return null;
 	}
-	
-	public void add(E s) {
-		MyLinkedNode<E> newNext = tail;
-		MyLinkedNode<E> newPrev = tail.getPrev();
-		MyLinkedNode<E> newNode = new MyLinkedNode<E>(s);
-		newNext.setPrev(newNode);
-		newNode.setPrev(newPrev);
-		newPrev.setNext(newNode);
-		newNode.setNext(newNext);
-		numElements++;
+
+    /**
+     * Adds a new element to the end of the list:
+     *
+     * @param elem
+     */
+	public void add(E elem) {
 	}
-	
-	public void add(int i, E s) {
+
+    /**
+     * Inserts a new element at the specified index.
+     *
+     * @param elem
+     */
+	public void add(int i, E elem) {
 	}
-	
+
+    /**
+     * Returns the current size of the list.
+     * @return
+     */
 	public int size() {
 		return numElements;
 	}
-	
+
+    /**
+     * Clears the contents of the list.
+     */
 	public void clear() {
 		// set head's next to the tail
 		head.setNext(tail);
@@ -51,4 +69,13 @@ public class MyLinkedList<E> {
 		tail.setNext(null);
 		numElements = 0;
 	}
+
+
+    /**
+     * These methods are only used by the unit tests.
+     * They are intentionally not public.
+     * @return
+     */
+    MyLinkedNode getHead() { return head; }
+    MyLinkedNode getTail() { return tail; }
 }

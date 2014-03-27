@@ -60,6 +60,18 @@ public class MyArrayList<E> {
 	 * @param elem
 	 */
 	public void add(E elem) {
+        if (this.currentSize < elements.length) {
+            for (int i=0; i<elements.length; i++) {
+                if (elements[i] == null) {
+                    elements[i] = elem;
+                    currentSize++;
+                    break;
+                }
+            }
+        } else {
+            expandSize();
+            add(elem);
+        }
 	}
 
 	/**
@@ -74,6 +86,7 @@ public class MyArrayList<E> {
 	 * @param elem
 	 */
 	public void add(int index, E elem) {
+
 	}
 	
 	/**

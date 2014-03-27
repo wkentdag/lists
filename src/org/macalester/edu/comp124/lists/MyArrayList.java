@@ -89,7 +89,7 @@ public class MyArrayList<E> {
         if (elements[index] != null) {
             expandSize();
 
-            for ( int i = elements.length; i >= index; i-- ) {
+            for ( int i = elements.length; i > index; i-- ) {
                 E elem2Move = elements[i - 1];
                 if (elem2Move != null) {
                     elements[i] = elem2Move;

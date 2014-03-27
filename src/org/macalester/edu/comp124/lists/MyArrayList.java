@@ -113,6 +113,17 @@ public class MyArrayList<E> {
      * Hint: use newArrayOfE!
 	 */
 	private void expandSize() {
+        int newArrayLength = currentSize * 2;
+        E newElements[];
+        for (int i=0; i<newArrayLength; i++) {
+            if (elements[i] != null) {
+                newElements[i] = elements[i];
+            } else {
+                newElements[i] = null;
+            }
+        }
+
+
 	}
 	
 	/**

@@ -38,6 +38,14 @@ public class MyLinkedList<E> {
      * @param elem
      */
 	public void add(E elem) {
+        MyLinkedNode<E> second2Last = tail.getPrev();
+        MyLinkedNode<E> newNode = new MyLinkedNode<E>(elem);
+        second2Last.setNext(newNode);
+        newNode.setPrev(second2Last);
+        newNode.setNext(tail);
+        tail.setPrev(newNode);
+        numElements++;
+
 	}
 
     /**

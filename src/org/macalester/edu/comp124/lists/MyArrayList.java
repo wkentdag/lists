@@ -117,9 +117,9 @@ public class MyArrayList<E> {
         E newElements[];
         for (int i=0; i<newArrayLength; i++) {
             if (elements[i] != null) {
-                newElements[i] = elements[i];
+                //newElements[i] = elements[i];
             } else {
-                newElements[i] = null;
+               // newElements[i] = null;
             }
         }
 

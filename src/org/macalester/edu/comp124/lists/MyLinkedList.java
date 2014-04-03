@@ -29,7 +29,11 @@ public class MyLinkedList<E> {
      * @return
      */
 	public E get(int index) {
-		return null;
+        MyLinkedNode<E> theNode = head;
+        for (int i=0; i<=index; i++) {
+            theNode = theNode.getNext();
+        }
+        return theNode.getValue();
 	}
 
     /**

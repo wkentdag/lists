@@ -58,6 +58,19 @@ public class MyLinkedList<E> {
      * @param elem
      */
 	public void add(int i, E elem) {
+        MyLinkedNode<E> newNode = new MyLinkedNode<E>(elem);
+        MyLinkedNode<E> theNode = head;
+        for (int x=0; x<i; x++) {
+            theNode = theNode.getNext();
+        }
+        MyLinkedNode<E> newNext = theNode.getNext();
+        theNode.setNext(newNode);
+        newNode.setPrev(theNode);
+        newNode.setNext(newNext);
+        newNext.setPrev(newNode);
+        numElements++;
+
+
 	}
 
     /**
